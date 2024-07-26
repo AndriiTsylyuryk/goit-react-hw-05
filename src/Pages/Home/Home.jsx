@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { fetchFilms } from "../../API";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const [films, setFilms] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await fetchFilms();
+        setFilms(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-export default Home
+    getData();
+  }, []);
+  return (
+    <div>
+      <h1>Trending today</h1>
+    </div>
+  );
+};
+
+export default Home;
