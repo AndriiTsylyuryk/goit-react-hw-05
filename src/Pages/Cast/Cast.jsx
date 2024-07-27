@@ -6,7 +6,6 @@ import Actors from "../Actors/Actors";
 const Cast = () => {
   const params = useParams();
   const [cast, setCast] = useState([]);
-  console.log(cast);
 
   useEffect(() => {
     fetchCastById(params.filmId)
