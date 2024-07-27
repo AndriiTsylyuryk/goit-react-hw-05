@@ -9,8 +9,8 @@ const Header = () => {
       };
   return (
     <div>
-        <nav>
-            <ul>
+        <nav className={s.header}>
+            <ul className={s.list}>
                 <li><NavLink className={buildLinkClass} to ='/'>Home</NavLink></li>
                 <li><NavLink className={buildLinkClass} to ='/movies'>Movies</NavLink></li>
             </ul>
