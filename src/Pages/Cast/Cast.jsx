@@ -12,18 +12,18 @@ const Cast = () => {
       .then((data) => setCast(data.cast))
       .catch((error) => console.log(error));
   }, [params.filmId]);
+
+  if (!cast) {
+    return <div>Loading...</div>;
+  }
   return (
     <div>
       <ul>
-        {cast.length === 0 ? (
-          <p>No cast information available.</p>
-        ) : (
-          cast.map((actor) => (
-            <li key={actor.id}>
-              <Actors actor={actor} />
-            </li>
-          ))
-        )}
+        {cast.map((actor) => (
+          <li key={actor.id}>
+            <Actors actor={actor} />
+          </li>
+        ))}
       </ul>
     </div>
   );

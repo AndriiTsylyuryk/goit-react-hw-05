@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { fetchReviewById } from '../../API';
-import ReviewItem from '../ReviewItem/ReviewItem';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchReviewById } from "../../API";
+import ReviewItem from "../ReviewItem/ReviewItem";
 
 const Reviews = () => {
   const params = useParams();
   const [review, setReview] = useState([]);
-  console.log(review)
+  console.log(review);
   useEffect(() => {
     fetchReviewById(params.filmId)
       .then((data) => setReview(data))
@@ -15,10 +15,14 @@ const Reviews = () => {
   return (
     <div>
       <ul>
-        {review.map(item =>  <ReviewItem item={item} />)}
+        {review.map((item) => (
+          <li>
+            <ReviewItem item={item} />
+          </li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;

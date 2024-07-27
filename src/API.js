@@ -52,5 +52,5 @@ export const fetchFilmsById = async (id) => {
         },
       }
     );
-    return response.data;
+    return response.data.results;
   };
