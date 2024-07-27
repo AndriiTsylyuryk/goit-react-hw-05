@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchFilms } from "../../API";
+import FilmList from "../../components/FilmList/FilmList";
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -19,6 +20,7 @@ const Home = () => {
   return (
     <div>
       <h1>Trending today</h1>
+      <FilmList films={films}/>
     </div>
   );
 };
