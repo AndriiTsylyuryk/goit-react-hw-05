@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import s from "./FilmList.module.css";
+import s from "./MovieList.module.css";
 
 const FilmList = ({ films, state }) => {
   return (

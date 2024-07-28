@@ -7,7 +7,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { fetchFilmsById } from "../../API";
-import s from "./FilmDetails.module.css";
+import s from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
 
 

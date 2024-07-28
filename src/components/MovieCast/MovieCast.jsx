@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCastById } from "../../API";
 
-import s from "./Cast.module.css";
+import s from "./MovieCast.module.css";
 import Actors from "../../pages/Actors/Actors";
 
 const Cast = () => {
