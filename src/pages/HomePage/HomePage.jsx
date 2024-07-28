@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchFilms } from "../../API";
-import FilmList from "../../components/FilmList/FilmList";
+import FilmList from "../../components/MovieList/MovieList";
 import s from "./Home.module.css";
 import { useLocation } from "react-router-dom";
 

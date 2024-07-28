@@ -1,19 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./Header/Header";
+import Header from "./Navigation/Navigation";
 
 // import Error from "../Pages/Error/Error";
-import Home from "../pages/Home/Home";
+import Home from "../pages/HomePage/HomePage";
 
-import Movies from "../pages/Movies/Movies";
+import Movies from "../pages/MoviesPage/MoviesPage";
 // import FilmDetails from "../Pages/FilmDetails/FilmDetails";
 import s from "./App.module.css";
 
-import Cast from "./Cast/Cast";
-import Reviews from "./Reviews/Reviews";
+import Cast from "./MovieCast/MovieCast";
+import Reviews from "./MovieReviews/MovieReviews";
 import { lazy, Suspense } from "react";
 
-const FilmDetails = lazy(() => import("../pages/FilmDetails/FilmDetails"))
-const Error = lazy(()=> import("../pages/Error/Error"))
+const FilmDetails = lazy(() => import("../pages/MovieDetailsPage/MovieDetailsPage"))
+const Error = lazy(()=> import("../pages/NotFoundPage/NotFoundPage"))
 
 const App = () => {
   return (
