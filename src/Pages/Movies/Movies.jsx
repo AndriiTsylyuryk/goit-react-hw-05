@@ -8,8 +8,8 @@ const Movies = () => {
   const queryParam = searchParams.get("query") ?? "";
 
   const [searchValue, setSearchValue] = useState(queryParam);
+
   const [movies, setMovies] = useState([]);
-  console.log(movies)
 
   useEffect(() => {
     const getMoviesData = async () => {
@@ -27,21 +27,27 @@ const Movies = () => {
   }, [queryParam]);
 
   const handleSearch = (value) => {
-    setSearchParams({ query: value });
+    if (!value) {
+      setSearchParams({});
+    } else {
+      setSearchParams({ query: value });
+    }
   };
 
   return (
     <div>
-      <SearchBar 
-        handleSearch={handleSearch} 
-        searchValue={searchValue} 
-        setSearchValue={setSearchValue} 
+      <SearchBar
+        handleSearch={handleSearch}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
       />
       <div>
         <h2>Search Results for "{queryParam}"</h2>
         <ul>
           {movies.map((movie) => (
-            <li key={movie.id}><Link to={`${movie.id.toString()}`}>{movie.title}</Link></li>
+            <li key={movie.id}>
+              <Link to={`${movie.id.toString()}`}>{movie.title}</Link>
+            </li>
           ))}
         </ul>
       </div>

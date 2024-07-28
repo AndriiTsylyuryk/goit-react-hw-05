@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { fetchReviewById } from "../../API";
 import ReviewItem from "../../Pages/ReviewItem/ReviewItem";
 
-
 const Reviews = () => {
   const params = useParams();
   const [review, setReview] = useState([]);
@@ -17,7 +16,6 @@ const Reviews = () => {
       .catch((error) => console.log(error), setLoading(false));
   }, [params.filmId]);
 
-
   return (
     <div>
       {review.length === 0 ? (
@@ -25,7 +23,7 @@ const Reviews = () => {
       ) : (
         <ul>
           {review.map((item) => (
-            <li>
+            <li key={new Date().getTime()}>
               <ReviewItem item={item} />
             </li>
           ))}

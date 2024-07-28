@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { fetchFilmsById } from "../../API";
 import s from "./FilmDetails.module.css";
 import clsx from "clsx";
@@ -8,6 +14,9 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 const FilmDetails = () => {
   const { filmId } = useParams();
   const [details, setDetails] = useState(null);
+  const location = useLocation();
+  const goBackRef = useRef(location?.state || "/");
+
   const buildLinkClass = ({ isActive }) => {
     return clsx(s.link, isActive && s.active);
   };
@@ -30,6 +39,9 @@ const FilmDetails = () => {
 
   return (
     <div className={s.wrapper}>
+      <Link className={s.goBack} to={goBackRef.current}>
+        Go back
+      </Link>
       <h1>{details.original_title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w500/${details.backdrop_path}`}
