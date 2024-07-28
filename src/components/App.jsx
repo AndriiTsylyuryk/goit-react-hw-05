@@ -7,8 +7,10 @@ import FilmList from "./FilmList/FilmList";
 import Movies from "../Pages/Movies/Movies";
 import FilmDetails from "../Pages/FilmDetails/FilmDetails";
 import s from "./App.module.css";
-import Cast from "../Pages/Cast/Cast";
-import Reviews from "../Pages/Reviews/Reviews";
+
+
+import Cast from "./Cast/Cast";
+import Reviews from "./Reviews/Reviews";
 
 const App = () => {
   return (
@@ -18,8 +20,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:filmId" element={<FilmDetails />}>
-          <Route path="cast" element={<Cast/>} />
-          <Route path="reviews" element={<Reviews/>} />
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

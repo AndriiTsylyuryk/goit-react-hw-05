@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCastById } from "../../API";
-import Actors from "../Actors/Actors";
+
+import s from "./Cast.module.css";
+import Actors from "../../Pages/Actors/Actors";
 
 const Cast = () => {
   const params = useParams();
@@ -17,10 +19,10 @@ const Cast = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <div className={s.wrapper}>
       <ul>
         {cast.map((actor) => (
-          <li key={actor.id}>
+          <li className={s.list} key={actor.id}>
             <Actors actor={actor} />
           </li>
         ))}

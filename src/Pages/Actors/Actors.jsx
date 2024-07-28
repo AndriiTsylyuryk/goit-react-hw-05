@@ -1,8 +1,8 @@
 import React from 'react'
-
+import s from './Actors.module.css'
 const Actors = ({actor}) => {
   return (
-    <div>{actor.profile_path && (
+    <div className={s.wrapper}>{actor.profile_path && (
         <img
           src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
           alt={actor.name}
