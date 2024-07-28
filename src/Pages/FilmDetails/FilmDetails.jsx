@@ -9,7 +9,7 @@ import {
 import { fetchFilmsById } from "../../API";
 import s from "./FilmDetails.module.css";
 import clsx from "clsx";
-import SearchBar from "../../components/SearchBar/SearchBar";
+// import SearchBar from "../../src/components/SearchBar/SearchBar";
 
 const FilmDetails = () => {
   const { filmId } = useParams();
