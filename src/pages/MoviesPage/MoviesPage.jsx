@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { Link, useSearchParams } from "react-router-dom";
 import { fetchFilmByName } from "../../API";
+import MovieList from "../../components/MovieList/MovieList";
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -43,13 +44,7 @@ const Movies = () => {
       />
       <div>
         <h2>Search Results for "{queryParam}"</h2>
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>
-              <Link to={`${movie.id.toString()}`}>{movie.title}</Link>
-            </li>
-          ))}
-        </ul>
+        <MovieList films={movies} />
       </div>
     </div>
   );
