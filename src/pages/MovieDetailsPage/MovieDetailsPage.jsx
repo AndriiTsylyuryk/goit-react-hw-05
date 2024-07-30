@@ -15,6 +15,7 @@ const FilmDetails = () => {
   const { filmId } = useParams();
   const [details, setDetails] = useState(null);
   const location = useLocation();
+ 
   const goBackRef = useRef(location?.state || "/");
 
   const buildLinkClass = ({ isActive }) => {
